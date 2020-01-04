@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "135784873771",
+    "firebase_url": "https://god-plans-a0044.firebaseio.com",
+    "project_id": "god-plans-a0044",
+    "storage_bucket": "god-plans-a0044.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135784873771:android:0da8b1ddc6f84042d88f6e",
+        "android_client_info": {
+          "package_name": "com.sahansbcsrh123.god_plans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135784873771-fof7q1ku04ov5r957l1fn6rn207ghouh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByeZasVAQUVNjNFE6Ccgy72wCMpPtqxws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135784873771-fof7q1ku04ov5r957l1fn6rn207ghouh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
