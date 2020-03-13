@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:god_plans/screan/authentication/authentication.dart';
 import 'package:god_plans/services/auth.dart';
+import 'package:god_plans/services/location.dart';
 class Register extends StatefulWidget {
 
   final Function toggleView;
@@ -79,24 +80,38 @@ class _RegisterState extends State<Register> {
                   },
                 ),
                 SizedBox(height: 10,),
-                RaisedButton.icon(onPressed: (){}, icon: Icon(Icons.add_location), label: Text("Add location")),
+                RaisedButton.icon(onPressed: (){
+                      Navigator.push(context,
+                        MaterialPageRoute(
+                              builder: (BuildContext context) => GetLocation()
+                        )
+                      );
+                }, icon: Icon(Icons.add_location),
+                    label: Text("Add location")),
                 SizedBox(height: 10,),
                 RaisedButton(
                   color: Colors.blue[700],
                   child: Text('Register',
                     style: TextStyle(color: Colors.white),),
                   onPressed: () async {
-                    if(_formKey.currentState.validate())
-                      {
-//                        print(email);
-//                        print(password);
+//                    if(_formKey.currentState.validate())
+//                      {
+                        print(email);
+                        print(password);
 //                        print(phoneno);
 
                         dynamic result = await _auth.registerWithEmailAndPassword(email,password);
-                        if(result == null){
 
+                        print("Hellow");
+                        if(result == null){
+                                setState(() {
+                                      erro = 'PLeace suply valid  email';
+                                });
+                        }else{
+                          print('Error');
                         }
-                     }
+
+                   //  }
                   },
 
                 ),

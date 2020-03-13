@@ -14,11 +14,13 @@ class _SignInState extends State<SignIn> {
 
 
   final AuthServices _auth = AuthServices();
+  final _formKey = GlobalKey<FormState>();
 
   //text field state
 
   String email = '';
   String password = '';
+  String error ='';
 
 
   @override
@@ -42,10 +44,12 @@ class _SignInState extends State<SignIn> {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 50 ,vertical: 20),
         child: Form(
+          key: _formKey,
           child:Column(
             children: <Widget>[
               SizedBox(height: 20.0,),
               TextField(
+
                 decoration: InputDecoration(hintText: "Email"),
                 onChanged: (val) {
                    setState((){
@@ -71,6 +75,13 @@ class _SignInState extends State<SignIn> {
                 onPressed: () async {
                     print(email);
                     print(password);
+                    //dynamic result  = await _auth.signInWithEmailAndPassword(email,password);
+                    dynamic result  = await _auth.signInAnon();
+                    if(result == null){
+                      setState(() {
+                        error = 'Could not singn in with email and  password';
+                      });
+                    }
                 },
 
               )
